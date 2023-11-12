@@ -1,12 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cghif0iqllsal"]
+[gd_scene load_steps=3 format=3 uid="uid://cghif0iqllsal"]
 
 [ext_resource type="PackedScene" uid="uid://bwf370miyvxa1" path="res://Entities/Player.tscn" id="1_u3wo3"]
+[ext_resource type="PackedScene" uid="uid://bjycstmmgtcny" path="res://Entities/World/Bush.tscn" id="2_eppwm"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_u3wo3")]
+position = Vector2(144, 72)
 
 [node name="CollisionTest" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CollisionTest"]
 polygon = PackedVector2Array(32, 40, 32, 40, 24, 88, 32, 128, 40, 160, 72, 176, 120, 168, 168, 160, 224, 168, 256, 168, 280, 112, 296, 88, 304, 48, 296, 24, 248, 24, 192, 16, 152, 8, 112, 8, 88, 16, 72, 16, 56, 24, 32, 32, 0, 32, 0, 0, 320, 0, 320, 192, 0, 192, 0, 32, 32, 32)
+
+[node name="Bush" parent="." instance=ExtResource("2_eppwm")]
+position = Vector2(80, 48)
+
+[node name="Bush2" parent="." instance=ExtResource("2_eppwm")]
+position = Vector2(88, 120)
+
+[node name="Bush3" parent="." instance=ExtResource("2_eppwm")]
+position = Vector2(224, 80)
